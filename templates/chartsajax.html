@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function cb(selection) {
+            $.getJSON({
+                url: "/callback", data: { 'data': selection }, success: function (result) {
+                    Plotly.newPlot('chart', result, {});;
+                }
+            });
+        }
+    </script>
+
+
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>1952-2007年的各国GDP可视化</h1>
+    <h2>输入国家如：India或China（大写字母开头）</h2>
+    
+    <input type="text" id="fname" name="fname" onchange="cb(this.value)">
+    <div id="chart" class="chart"></div>
+    <h1>1952-2007年的各洲GDP可视化</h1>
+    <div id="chart1" class="chart1"></div>
+    <h1>1952-2007年的各国人口寿命期望可视化</h1>
+    <div id="chart2" class="chart2"></div>
+    <h1>1952-2007年的各国人口可视化</h1>
+    <div id="chart3" class="chart3"></div>
+    <h1>1952-2007年世界各国人口寿命期望可视化</h1>
+    <div id="chart4" class="chart4"></div>
+    <h1>1952-2007年世界各国GDP可视化</h1>
+    <div id="chart5" class="chart5"></div>
+
+</body>
+
+<script>
+    d = {{ graphJSON | safe }};
+    Plotly.newPlot('chart', d, {});
+</script>
+
+<script>
+    d1 = {{ graphJSON1 | safe }};
+    Plotly.newPlot('chart1', d1, {});
+</script>
+
+<script>
+    d2 = {{ graphJSON2 | safe }};
+    Plotly.newPlot('chart2', d2, {});
+</script>
+
+<script>
+    d3 = {{ graphJSON3 | safe }};
+    Plotly.newPlot('chart3', d3, {});
+</script>
+
+<script>
+    d4 = {{ graphJSON4 | safe }};
+    Plotly.newPlot('chart4', d4, {});
+</script>
+
+<script>
+    d5 = {{ graphJSON5 | safe }};
+    Plotly.newPlot('chart5', d5, {});
+</script>
+</html>

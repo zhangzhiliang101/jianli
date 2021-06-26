@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="font-family:arial, sans-serif">
+    <h1>泰坦尼克号生存占比</h1>
+    <div id="tita" class="tita"></div>
+    <h1>各年龄阶段男女存活数</h1>
+    <div id="tita1" class="tita1"></div>
+    <h1>男女的生存死亡人数，survived=2表示死亡，死亡人数需减半。</h1>
+    <div id="tita2" class="tita2"></div>
+    <h1>泰坦尼克号男女占比</h1>
+    <div id="tita3" class="tita3"></div>
+    <h1>泰坦尼克号阶级占比</h1>
+    <div id="tita4" class="tita4"></div>
+    <h1>各阶级年龄分布</h1>
+    <div id="tita5" class="tita5"></div>
+
+</body>
+
+<script>
+    d = {{ graphJSON6 | safe }};
+    Plotly.newPlot('tita', d, {});
+</script>
+
+<script>
+    d1 = {{ graphJSON7 | safe }};
+    Plotly.newPlot('tita1', d1, {});
+</script>
+
+<script>
+    d2 = {{ graphJSON8 | safe }};
+    Plotly.newPlot('tita2', d2, {});
+</script>
+
+<script>
+    d3 = {{ graphJSON9 | safe }};
+    Plotly.newPlot('tita3', d3, {});
+</script>
+
+<script>
+    d4 = {{ graphJSON10 | safe }};
+    Plotly.newPlot('tita4', d4, {});
+</script>
+
+<script>
+    d5 = {{ graphJSON11 | safe }};
+    Plotly.newPlot('tita5', d5, {});
+</script>
+</html>
