@@ -1,4 +1,5 @@
 Flask
 plotly
 pandas
+json
 gunicorn
