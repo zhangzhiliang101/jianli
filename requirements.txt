@@ -2,4 +2,3 @@ Flask
 plotly
 pandas
 gunicorn
-plotly.express
