@@ -2,3 +2,5 @@ Flask
 plotly
 pandas
 gunicorn
+plotly.express
+plotly.graph_objs
